@@ -1,0 +1,28 @@
+[1;31m
+Start test 1[0m
+	[0;34m
+4[0m[0;34m  .   ____          _            __ _ _
+5[0m[0;34m /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+6[0m[0;34m( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+7[0m[0;34m \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+6[0m[0;34m  '  |____| .__|_| |_|_| |_\__, | / / / /
+5[0m[0;34m =========|_|==============|___/=/_/_/_/
+7[0m[0;34m :: Spring Boot ::                (v2.5.6)
+[0m[0;34m
+î[0m[0;34m2022-10-30 20:26:09.035  INFO 3700 --- [    Test worker] platform.CodeSharingPlatform             : Starting CodeSharingPlatform using Java 17.0.5 on DESKTOP-87JLN8B with PID 3700 (started by Admin in D:\HyperSkill\Code Sharing Platform\Code Sharing Platform\task)
+∞[0m[0;34m2022-10-30 20:26:09.038  INFO 3700 --- [    Test worker] platform.CodeSharingPlatform             : No active profile set, falling back to default profiles: default
+ú[0m[0;34m2022-10-30 20:26:10.186  INFO 3700 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8889 (http)
+â[0m[0;34m2022-10-30 20:26:10.195  INFO 3700 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+ü[0m[0;34m2022-10-30 20:26:10.196  INFO 3700 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+¢[0m[0;34m2022-10-30 20:26:10.277  INFO 3700 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+Ø[0m[0;34m2022-10-30 20:26:10.277  INFO 3700 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1188 ms
+•[0m[0;34m2022-10-30 20:26:10.918  INFO 3700 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+´[0m[0;34m2022-10-30 20:26:10.951  INFO 3700 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8889 (http) with context path ''
+¥[0m[0;34m2022-10-30 20:26:10.965  INFO 3700 --- [    Test worker] platform.CodeSharingPlatform             : Started CodeSharingPlatform in 2.292 seconds (JVM running for 2.978)
+•[0;34m2022-10-30 20:26:11.243  INFO 3700 --- [nio-8889-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+ò[0m[0;34m2022-10-30 20:26:11.243  INFO 3700 --- [nio-8889-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+ê[0m[0;34m2022-10-30 20:26:11.245  INFO 3700 --- [nio-8889-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[0m[1;31m
+Start test 2[0m
+[1;31m
+Start test 3[0m

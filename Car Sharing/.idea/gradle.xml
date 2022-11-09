@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="17" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Car Sharing/task" />
+            <option value="$PROJECT_DIR$/Car Sharing/task/build/classes/java" />
+            <option value="$PROJECT_DIR$/Car Sharing/task/build/generated/sources/annotationProcessor/java" />
+            <option value="$PROJECT_DIR$/Car Sharing/task/build/generated/sources/headers/java" />
+            <option value="$PROJECT_DIR$/Car Sharing/task/build/reports/tests" />
+            <option value="$PROJECT_DIR$/Car Sharing/task/build/test-results" />
+            <option value="$PROJECT_DIR$/Car Sharing/task/build/tmp" />
+            <option value="$PROJECT_DIR$/Topics/ArrayList/Creating list" />
+            <option value="$PROJECT_DIR$/Topics/ArrayList/How to get an element by the index" />
+            <option value="$PROJECT_DIR$/Topics/ArrayList/Output the list's elements" />
+            <option value="$PROJECT_DIR$/Topics/ArrayList/The behavior of methods" />
+            <option value="$PROJECT_DIR$/Topics/ArrayList/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Collectors/ASCII Art" />
+            <option value="$PROJECT_DIR$/Topics/Collectors/Collectors class" />
+            <option value="$PROJECT_DIR$/Topics/Collectors/Determine the value" />
+            <option value="$PROJECT_DIR$/Topics/Collectors/Existing collectors" />
+            <option value="$PROJECT_DIR$/Topics/Collectors/Set average" />
+            <option value="$PROJECT_DIR$/Topics/Collectors/The product of squares" />
+            <option value="$PROJECT_DIR$/Topics/Collectors/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Collectors/Сollect parameter" />
+            <option value="$PROJECT_DIR$/Topics/Comparable/Implement Comparable" />
+            <option value="$PROJECT_DIR$/Topics/Comparable/Rewrite compareTo method" />
+            <option value="$PROJECT_DIR$/Topics/Comparable/Rules" />
+            <option value="$PROJECT_DIR$/Topics/Comparable/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Comparable/Value class" />
+            <option value="$PROJECT_DIR$/Topics/Comparator/Comparing numbers" />
+            <option value="$PROJECT_DIR$/Topics/Comparator/Comparing values" />
+            <option value="$PROJECT_DIR$/Topics/Comparator/Method name" />
+            <option value="$PROJECT_DIR$/Topics/Comparator/Non-abstract methods" />
+            <option value="$PROJECT_DIR$/Topics/Comparator/Reverse sorting" />
+            <option value="$PROJECT_DIR$/Topics/Comparator/Sort users" />
+            <option value="$PROJECT_DIR$/Topics/Comparator/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Default methods/Resolve a diamond problem" />
+            <option value="$PROJECT_DIR$/Topics/Default methods/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Functional data processing with streams/A sorted stream" />
+            <option value="$PROJECT_DIR$/Topics/Functional data processing with streams/Create a stream from a list" />
+            <option value="$PROJECT_DIR$/Topics/Functional data processing with streams/Intermediate operations" />
+            <option value="$PROJECT_DIR$/Topics/Functional data processing with streams/Print elements of a stream" />
+            <option value="$PROJECT_DIR$/Topics/Functional data processing with streams/Statements about stream operations" />
+            <option value="$PROJECT_DIR$/Topics/Functional data processing with streams/Statements about streams" />
+            <option value="$PROJECT_DIR$/Topics/Functional data processing with streams/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Functional interfaces/A string operator" />
+            <option value="$PROJECT_DIR$/Topics/Functional interfaces/Statements" />
+            <option value="$PROJECT_DIR$/Topics/Functional interfaces/Ternary predicate" />
+            <option value="$PROJECT_DIR$/Topics/Functional interfaces/The requirement" />
+            <option value="$PROJECT_DIR$/Topics/Functional interfaces/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to generic programming/Correct the program" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to generic programming/Pastry packing optimization" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to generic programming/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to generic programming/Type arguments" />
+            <option value="$PROJECT_DIR$/Topics/Lambda expressions/Expressions" />
+            <option value="$PROJECT_DIR$/Topics/Lambda expressions/Higher-order functions" />
+            <option value="$PROJECT_DIR$/Topics/Lambda expressions/Max of two integers" />
+            <option value="$PROJECT_DIR$/Topics/Lambda expressions/Next even number" />
+            <option value="$PROJECT_DIR$/Topics/Lambda expressions/Statements" />
+            <option value="$PROJECT_DIR$/Topics/Lambda expressions/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Method references/Ascending and descending sorting" />
+            <option value="$PROJECT_DIR$/Topics/Method references/Replace the lambda expression with a method reference" />
+            <option value="$PROJECT_DIR$/Topics/Method references/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Optional/Create an Optional value" />
+            <option value="$PROJECT_DIR$/Topics/Optional/Sum up optional values" />
+            <option value="$PROJECT_DIR$/Topics/Optional/The address book" />
+            <option value="$PROJECT_DIR$/Topics/Optional/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Reduction methods/Calculating factorials" />
+            <option value="$PROJECT_DIR$/Topics/Reduction methods/Reduce-like operations" />
+            <option value="$PROJECT_DIR$/Topics/Reduction methods/Reducing persons by ages" />
+            <option value="$PROJECT_DIR$/Topics/Reduction methods/Statements" />
+            <option value="$PROJECT_DIR$/Topics/Reduction methods/Sum of divisors" />
+            <option value="$PROJECT_DIR$/Topics/Reduction methods/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Standard functional interfaces/Describe the function" />
+            <option value="$PROJECT_DIR$/Topics/Standard functional interfaces/Ternary operator" />
+            <option value="$PROJECT_DIR$/Topics/Standard functional interfaces/Theory" />
+            <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/Creating instances" />
+            <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/Squares list" />
+            <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/Theory" />
+            <option value="$PROJECT_DIR$/Topics/The Set interface/A subset of sorted set" />
+            <option value="$PROJECT_DIR$/Topics/The Set interface/Implementations" />
+            <option value="$PROJECT_DIR$/Topics/The Set interface/Output elements" />
+            <option value="$PROJECT_DIR$/Topics/The Set interface/The set of programming languages" />
+            <option value="$PROJECT_DIR$/Topics/The Set interface/The size of a set" />
+            <option value="$PROJECT_DIR$/Topics/The Set interface/Theory" />
+            <option value="$PROJECT_DIR$/util" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Recipes/task" />
+            <option value="$PROJECT_DIR$/Recipes/task/build/classes/java" />
+            <option value="$PROJECT_DIR$/Recipes/task/build/generated/sources/annotationProcessor/java" />
+            <option value="$PROJECT_DIR$/Recipes/task/build/generated/sources/headers/java" />
+            <option value="$PROJECT_DIR$/Recipes/task/build/reports/tests" />
+            <option value="$PROJECT_DIR$/Recipes/task/build/test-results" />
+            <option value="$PROJECT_DIR$/Recipes/task/build/tmp" />
+            <option value="$PROJECT_DIR$/Topics/Builder/Builder" />
+            <option value="$PROJECT_DIR$/Topics/Builder/Describe the builder" />
+            <option value="$PROJECT_DIR$/Topics/Builder/Robot Builder" />
+            <option value="$PROJECT_DIR$/Topics/Builder/Subway Sandwich" />
+            <option value="$PROJECT_DIR$/Topics/Builder/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Comparing dates and time/How many date-time pairs match the range" />
+            <option value="$PROJECT_DIR$/Topics/Comparing dates and time/The New Year is coming (or not)" />
+            <option value="$PROJECT_DIR$/Topics/Comparing dates and time/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Custom threads/Multiple threads" />
+            <option value="$PROJECT_DIR$/Topics/Custom threads/Starting runnables" />
+            <option value="$PROJECT_DIR$/Topics/Custom threads/Statements about starting threads" />
+            <option value="$PROJECT_DIR$/Topics/Custom threads/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Custom threads/Writing a thread for printing numbers" />
+            <option value="$PROJECT_DIR$/Topics/HashMap/Advantages" />
+            <option value="$PROJECT_DIR$/Topics/HashMap/The same letter" />
+            <option value="$PROJECT_DIR$/Topics/HashMap/The same pairs" />
+            <option value="$PROJECT_DIR$/Topics/HashMap/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Hierarchy of exceptions/BadRequestException" />
+            <option value="$PROJECT_DIR$/Topics/Hierarchy of exceptions/Base class" />
+            <option value="$PROJECT_DIR$/Topics/Hierarchy of exceptions/Base classes of RuntimeException" />
+            <option value="$PROJECT_DIR$/Topics/Hierarchy of exceptions/Checked exceptions" />
+            <option value="$PROJECT_DIR$/Topics/Hierarchy of exceptions/Overview the hierarchy" />
+            <option value="$PROJECT_DIR$/Topics/Hierarchy of exceptions/Overview the hierarchy (1)" />
+            <option value="$PROJECT_DIR$/Topics/Hierarchy of exceptions/Subclasses of Exception" />
+            <option value="$PROJECT_DIR$/Topics/Hierarchy of exceptions/Subclasses of RuntimeException" />
+            <option value="$PROJECT_DIR$/Topics/Hierarchy of exceptions/The base class" />
+            <option value="$PROJECT_DIR$/Topics/Hierarchy of exceptions/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Hierarchy of exceptions/Unchecked exceptions" />
+            <option value="$PROJECT_DIR$/Topics/Hierarchy of exceptions/UncheckedException" />
+            <option value="$PROJECT_DIR$/Topics/Inner classes/Christmas tree" />
+            <option value="$PROJECT_DIR$/Topics/Inner classes/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Inner classes/Why do we need inner classes" />
+            <option value="$PROJECT_DIR$/Topics/Inner classes/Your vehicle" />
+            <option value="$PROJECT_DIR$/Topics/Regexes in programs/Check IP address" />
+            <option value="$PROJECT_DIR$/Topics/Regexes in programs/Check the clock time" />
+            <option value="$PROJECT_DIR$/Topics/Regexes in programs/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Regexes in programs/Vehicle registration number" />
+            <option value="$PROJECT_DIR$/Topics/Runtime type checking/File equality" />
+            <option value="$PROJECT_DIR$/Topics/Runtime type checking/Pattern matching with the logical OR operator" />
+            <option value="$PROJECT_DIR$/Topics/Runtime type checking/Sort out the classes" />
+            <option value="$PROJECT_DIR$/Topics/Runtime type checking/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Runtime type checking/Who is who" />
+            <option value="$PROJECT_DIR$/Topics/Thread management/Calculate the number of distinct characters" />
+            <option value="$PROJECT_DIR$/Topics/Thread management/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Thread management/Workers in programs" />
+            <option value="$PROJECT_DIR$/Topics/Thread synchronization/Countdown counter" />
+            <option value="$PROJECT_DIR$/Topics/Thread synchronization/Synchronized blocks" />
+            <option value="$PROJECT_DIR$/Topics/Thread synchronization/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Threads as objects/Counting threads" />
+            <option value="$PROJECT_DIR$/Topics/Threads as objects/Getting current thread info" />
+            <option value="$PROJECT_DIR$/Topics/Threads as objects/Is thread daemon" />
+            <option value="$PROJECT_DIR$/Topics/Threads as objects/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Threads as objects/Thread name" />
+            <option value="$PROJECT_DIR$/Topics/hashCode() and equals() in Collections/Duplicate elements in HashSet" />
+            <option value="$PROJECT_DIR$/Topics/hashCode() and equals() in Collections/Theory" />
+            <option value="$PROJECT_DIR$/Topics/hashCode() and equals() in Collections/Unique pairs in HashMap" />
+            <option value="$PROJECT_DIR$/Topics/hashCode() and equals()/Complex numbers" />
+            <option value="$PROJECT_DIR$/Topics/hashCode() and equals()/Theory" />
+            <option value="$PROJECT_DIR$/util" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

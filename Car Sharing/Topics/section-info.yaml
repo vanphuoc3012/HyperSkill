@@ -1,0 +1,16 @@
+content:
+- Default methods
+- Introduction to generic programming
+- The Collections Framework overview
+- Lambda expressions
+- ArrayList
+- Comparable
+- The Set interface
+- Method references
+- Functional interfaces
+- Standard functional interfaces
+- Optional
+- Comparator
+- Functional data processing with streams
+- Reduction methods
+- Collectors
