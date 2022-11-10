@@ -1143,6 +1143,9 @@ files:
 - name: src/recipes/db/recipes_db.mv.db
   visible: true
   learner_created: true
+- name: src/recipes/model/View.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/13092#comment
 status: Solved
 feedback:

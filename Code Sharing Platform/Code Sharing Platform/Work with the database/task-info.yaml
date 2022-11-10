@@ -474,6 +474,315 @@ files:
         }
     }
   learner_created: false
+- name: src/platform/models/Code.java
+  visible: true
+  text: |
+    package platform.models;
+
+    import com.fasterxml.jackson.annotation.JsonIgnore;
+    import com.fasterxml.jackson.annotation.JsonProperty;
+    import lombok.AllArgsConstructor;
+    import lombok.Data;
+    import lombok.NoArgsConstructor;
+    import org.springframework.format.annotation.DateTimeFormat;
+    import org.springframework.stereotype.Component;
+
+    import java.time.LocalDateTime;
+    import java.time.format.DateTimeFormatter;
+
+    public class Code {
+
+        @JsonIgnore
+        private Integer id;
+
+        private String code;
+
+        @JsonProperty
+        private String date;
+
+        public Integer getId() {
+            return id;
+        }
+        public void setId(Integer id) {
+            this.id = id;
+        }
+
+        public String getCode() {
+            return code;
+        }
+
+        public void setCode(String code) {
+            this.code = code;
+        }
+
+        public String getDate() {
+            return date;
+        }
+
+        public void setDate(LocalDateTime date) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyy HH:mm:ss");
+            this.date = date.format(formatter);
+        }
+
+
+
+        public void setDate(String date) {
+            this.date = date;
+        }
+
+        public String idReturnJson() {
+            return "{ \"id\" : \""+id+"\" }";
+        }
+
+        @Override
+        public String toString() {
+            return "Code{" +
+                    "id=" + id +
+                    ", code='" + code + '\'' +
+                    ", date='" + date + '\'' +
+                    '}';
+        }
+    }
+  learner_created: true
+- name: src/platform/controller/CodeControllerReturnAPI.java
+  visible: true
+  text: |
+    package platform.controller;
+
+
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.http.HttpStatus;
+    import org.springframework.http.ResponseEntity;
+    import org.springframework.web.bind.annotation.*;
+    import platform.models.Code;
+
+    import java.time.LocalDateTime;
+    import java.util.ArrayList;
+    import java.util.Collections;
+    import java.util.Comparator;
+    import java.util.List;
+
+    @RestController
+    public class CodeControllerReturnAPI {
+
+        @Autowired
+        private List<Code> codeList;
+
+        private int count = 1;
+
+    //    @GetMapping("/api/code")
+    //    public ResponseEntity getCodeAPI() {
+    //        Code code1 = new Code();
+    //        code1.setCode(code.getCode().replace("(\\r\\n|\\n|\\r)", ""));
+    //        code1.setDate(LocalDateTime.parse(code.getDate()));
+    //        return new ResponseEntity(code1, HttpStatus.OK);
+    //    }
+
+        @GetMapping("/api/code/{id}")
+        public ResponseEntity getCodeAPI(@PathVariable Integer id) {
+            System.out.println("Getting code with id: "+id+"for API");
+            Code code1 = codeList.get(id-1);
+            code1.setCode(code1.getCode().replace("(\\r\\n|\\n|\\r)", ""));
+            return new ResponseEntity(code1, HttpStatus.OK);
+        }
+
+        @GetMapping("/api/code/latest")
+        public ResponseEntity getLatestCode() {
+            System.out.println("Getting latest code for API");
+            List<Code> list = new ArrayList<>(codeList);
+            if(codeList.size() > 10) {
+                list = list.subList(list.size() - 10, list.size());
+            }
+            Collections.reverse(list);
+            for(Code c : list) {
+                c.setCode(c.getCode().replace("(\\r\\n|\\n|\\r)", ""));
+            }
+            return new ResponseEntity(list, HttpStatus.OK);
+        }
+
+
+        @PostMapping("/api/code/new")
+        public ResponseEntity addNewCodeJ(@RequestBody Code codeToAdd) {
+            codeList.add(codeToAdd);
+            codeToAdd.setId(count);
+            codeToAdd.setDate(LocalDateTime.now());
+            System.out.println("Adding code: "+codeToAdd.toString());
+            count++;
+            return new ResponseEntity(codeToAdd.idReturnJson(), HttpStatus.OK);
+        }
+
+    }
+  learner_created: true
+- name: src/platform/controller/CodeControllerReturnView.java
+  visible: true
+  text: |
+    package platform.controller;
+
+
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.stereotype.Controller;
+    import org.springframework.web.bind.annotation.GetMapping;
+    import org.springframework.web.bind.annotation.PathVariable;
+    import org.springframework.web.servlet.ModelAndView;
+    import platform.models.Code;
+
+    import java.time.LocalDateTime;
+    import java.util.ArrayList;
+    import java.util.Collections;
+    import java.util.Comparator;
+    import java.util.List;
+
+    @Controller
+    public class CodeControllerReturnView {
+
+        @Autowired
+        private List<Code> codeList;
+
+        @GetMapping("/code/new")
+        private String addCode() {
+            return "newCode";
+        }
+
+        @GetMapping("/code/{id}")
+        private ModelAndView getCode(@PathVariable Integer id) {
+
+            System.out.println("Getting code with id: "+id+"for View");
+
+            Code code = codeList.get(id-1);
+
+            ModelAndView modelAndView = new ModelAndView();
+            modelAndView.setViewName("code");
+            modelAndView.addObject("code", code);
+            return modelAndView;
+        }
+
+        @GetMapping("/code/latest")
+        private ModelAndView getCodeWithId() {
+            System.out.println("Getting latest code for View");
+            List<Code> list = new ArrayList<>(codeList);
+            if(codeList.size() > 10) {
+                list = list.subList(list.size() - 10, list.size());
+            }
+            Collections.reverse(list);
+            for(Code c : list) {
+                c.setCode(c.getCode().replace("(\\r\\n|\\n|\\r)", ""));
+            }
+                ModelAndView modelAndView = new ModelAndView();
+                modelAndView.setViewName("listCode");
+                modelAndView.addObject("latestCode", list);
+                return modelAndView;
+        }
+    }
+  learner_created: true
+- name: src/resources/templates/code.html
+  visible: true
+  text: |-
+    <!DOCTYPE html>
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Code</title>
+        <link rel="stylesheet" th:href="@{http://localhost:8889/main.css}" />
+    </head>
+    <body>
+        <span id="load_date" th:text="${code.getDate()}"></span>
+        <pre id="code_snippet" th:text="${code.getCode()}"></pre>
+    </body>
+    </html>
+  learner_created: true
+- name: src/resources/templates/listCode.html
+  visible: true
+  text: |-
+    <!DOCTYPE html>
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+      <meta charset="UTF-8">
+      <title>Latest</title>
+      <link rel="stylesheet" th:href="@{http://localhost:8889/main.css}" />
+    </head>
+    <body>
+    <ul>
+      <th:block th:each="code: ${latestCode}">
+        <span id="load_date" th:text="${code.getDate()}"></span>
+        <pre id="code_snippet" th:text="${code.getCode()}"></pre>
+      </th:block>
+    </ul>
+
+    </body>
+    </html>
+  learner_created: true
+- name: src/resources/templates/newCode.html
+  visible: true
+  text: |-
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Create</title>
+        <link rel="stylesheet" href="http://localhost:8889/main.css">
+
+    </head>
+    <body>
+
+        <textarea id="code_snippet" name="code_snippet" placeholder="// write your code here"></textarea>
+        <br>
+        <button id="send_snippet" type = "submit" onclick="send()">Create</button>
+        <script>
+            function send() {
+        let object = {
+            "code": document.getElementById("code_snippet").value
+        };
+
+        let json = JSON.stringify(object);
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", '/api/code/new', false)
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+        xhr.send(json);
+
+        if (xhr.status == 200) {
+          alert("Success!");
+        }
+    }
+        </script>
+    </body>
+    </html>
+  learner_created: true
+- name: src/resources/static/main.js
+  visible: true
+  text: "function send() {\n    let object = {\n        \"code\": document.getElementById(\"\
+    code_snippet\").value\n    };\n    \n    let json = JSON.stringify(object);\n\
+    \    \n    let xhr = new XMLHttpRequest();\n    xhr.open(\"POST\", '/api/code/new',\
+    \ false)\n    xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');\n\
+    \    xhr.send(json);\n    \n    if (xhr.status == 200) {\n      alert(\"Success!\"\
+    );\n    }\n}"
+  learner_created: true
+- name: src/resources/static/main.css
+  visible: true
+  text: |2-
+
+    #code_snippet {
+        width: 500px;
+        height: 200px;
+        background-color: #d1d1d1;
+    }
+
+    #load_date {
+        color: green;
+    }
+  learner_created: true
+- name: src/platform/repository/CodeRepo.java
+  visible: true
+  learner_created: true
+- name: src/platform/service/CodeService.java
+  visible: true
+  learner_created: true
+- name: src/db/snippets.mv.db
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/11030#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Thu, 10 Nov 2022 05:54:27 UTC"
+record: 4

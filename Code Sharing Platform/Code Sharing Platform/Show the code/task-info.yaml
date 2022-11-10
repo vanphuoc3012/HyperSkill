@@ -164,13 +164,13 @@ files:
         }
     }
   learner_created: false
-- name: src/resources/templates/code.html
-  visible: true
-  learner_created: true
 - name: src/platform/controller/returnAPI.java
   visible: true
   learner_created: true
 - name: src/platform/controller/returnView.java
+  visible: true
+  learner_created: true
+- name: src/resources/templates/codeStage1.html
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/learn/step/11027#comment
