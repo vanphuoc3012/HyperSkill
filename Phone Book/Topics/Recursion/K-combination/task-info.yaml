@@ -1,0 +1,41 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    import java.util.Scanner;
+
+    public class Main {
+
+        public static int comb(int n, int k) {
+            // write your code here
+        }
+
+        /* Do not change code below */
+        public static void main(String[] args) {
+            final Scanner scanner = new Scanner(System.in);
+            final int n = scanner.nextInt();
+            final int k = scanner.nextInt();
+            System.out.println(comb(n, k));
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3124#comment
+status: Failed
+feedback:
+  message: |
+    Failed test #1 of 12. Wrong answer
+
+    This is a sample test from the problem statement!
+
+    Test input:
+    3 2
+
+    Correct output:
+    3
+
+    Your code output:
+    comb: 3 ---2
+    3
+  time: "Sat, 12 Nov 2022 16:31:30 UTC"
+record: -1

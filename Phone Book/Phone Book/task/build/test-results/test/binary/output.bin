@@ -1,0 +1,13 @@
+[1;31m
+Start test 1[0m
+sizer directories: 1014130
+$Start searching (linear search)...
+=Found 500 / 500 entries. Time taken: 0 min. 21 sec. 303 ms.
+0Start searching (bubble sort + jump search)...
+=Found 500 / 500 entries. Time taken: 0 min. 42 sec. 758 ms.
+KSorting time: 0 min. 42 sec. 646 ms.Searching time: 0 min. 0 sec. 112 ms.
+1Start searching (quick sort + binary search)...
+<Found 500 / 500 entries. Time taken: 0 min. 2 sec. 821 ms.
+HSorting time: 0 min. 2 sec. 819 ms.Searching time: 0 min. 0 sec. 2 ms.
+!Start searching (hash table)...
+;Found 500 / 500 entries. Time taken: 0 min. 1 sec. 85 ms.

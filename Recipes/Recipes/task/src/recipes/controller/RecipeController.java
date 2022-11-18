@@ -1,5 +1,6 @@
 package recipes.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -10,14 +11,13 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import recipes.model.Recipe;
 import recipes.service.RecipeService;
-import recipes.service.UserService;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -26,12 +26,9 @@ public class RecipeController {
 
     private final RecipeService recipeService;
 
-    private final UserService userService;
-
     @Autowired
-    public RecipeController(RecipeService recipeService, UserService userService) {
+    public RecipeController(RecipeService recipeService) {
         this.recipeService = recipeService;
-        this.userService = userService;
     }
 
     private final Recipe firstRecipe = new Recipe();
@@ -55,12 +52,9 @@ public class RecipeController {
 
     //Stage 2
     @PostMapping("/api/recipe/new")
-    public ResponseEntity addNewRecipe(@Validated @RequestBody Recipe recipeToAdd,
-                                       Authentication auth) throws JsonProcessingException {
-        System.out.println("~~~~Adding new recipe. Username: "+auth.getName());
+    public ResponseEntity addNewRecipe(@Validated @RequestBody Recipe recipeToAdd) throws JsonProcessingException {
+        System.out.println("~~~~Adding new recipe~~~~");
         recipeToAdd.setDate(LocalDateTime.now());
-        recipeToAdd.setUser(userService.findUserByEmail(auth.getName()));
-
         Recipe r = recipeService.save(recipeToAdd);
         System.out.println("~~~~New Recipe's id = "+r.getId()+"~~~~");
 
@@ -79,22 +73,17 @@ public class RecipeController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             System.out.println("~~~~Found~~~~");
-            SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.serializeAllExcept("id", "user");
+            SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.serializeAllExcept("id");
             return new ResponseEntity(recipeApplyFilter(filter, r), HttpStatus.OK);
         }
     }
 
     @DeleteMapping("/api/recipe/{id}")
-    public ResponseEntity deleteRecipe(@PathVariable Integer id,
-                                       Authentication auth) {
+    public ResponseEntity deleteRecipe(@PathVariable Integer id) {
         if(recipeService.checkExistsById(id)) {
-            if(recipeService.findById(id).getUser().getEmail().equals(auth.getName())) {
-                System.out.println("~~~~Found recipe with id = "+id+" deleting");
-                recipeService.deleteById(id);
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            } else {
-                return new ResponseEntity(HttpStatus.FORBIDDEN);
-            }
+            System.out.println("~~~~Found recipe with id = "+id+" deleting");
+            recipeService.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
             System.out.println("~~~~Not found~~~~");
             return new ResponseEntity(HttpStatus.NOT_FOUND);
@@ -103,31 +92,26 @@ public class RecipeController {
 
     @PutMapping("/api/recipe/{id}")
     public ResponseEntity updateRecipe(@PathVariable Integer id,
-                                       @Validated @RequestBody Recipe recipeToUpdate,
-                                       Authentication auth) {
+                                       @Validated @RequestBody Recipe recipeToUpdate) {
         Recipe recipe = recipeService.findById(id);
         if(recipe == null) {
             return new ResponseEntity(HttpStatus.NOT_FOUND);
         } else {
-            if(recipeService.findById(id).getUser().getEmail().equals(auth.getName())) {
-                System.out.println("~~~~Updating recipe id = "+id+" By Username: "+auth.getName()+"~~~~");
-                recipe.setName(recipeToUpdate.getName());
-                recipe.setCategory(recipeToUpdate.getCategory());
-                recipe.setDescription(recipeToUpdate.getDescription());
-                recipe.setIngredients(recipeToUpdate.getIngredients());
-                recipe.setDirections(recipeToUpdate.getDirections());
-                recipe.setDate(LocalDateTime.now());
-                recipeService.save(recipe);
+            System.out.println("~~~~Updating recipe id = "+id+"~~~~");
+            recipe.setName(recipeToUpdate.getName());
+            recipe.setCategory(recipeToUpdate.getCategory());
+            recipe.setDescription(recipeToUpdate.getDescription());
+            recipe.setIngredients(recipeToUpdate.getIngredients());
+            recipe.setDirections(recipeToUpdate.getDirections());
+            recipe.setDate(LocalDateTime.now());
+            recipeService.save(recipe);
 
-                return new ResponseEntity(HttpStatus.NO_CONTENT);
-            } else {
-                return new ResponseEntity(HttpStatus.FORBIDDEN);
-            }
+            return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
     }
 
     @GetMapping("/api/recipe/search")
-    public ResponseEntity search(@RequestParam(required = false) Map<String, String> request) throws JsonProcessingException {
+    public ResponseEntity search (@RequestParam(required = false) Map<String, String> request) throws JsonProcessingException {
         if(request.isEmpty() || request.size() > 1) {
             System.out.println("~~~~No request param~~~~");
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
@@ -135,7 +119,7 @@ public class RecipeController {
             ObjectMapper objectMapper = new ObjectMapper()
                                         .registerModule(new JavaTimeModule())
                                         .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-            SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.serializeAllExcept("id", "user");
+            SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.serializeAllExcept("id");
             FilterProvider filterProvider = new SimpleFilterProvider().addFilter("recipeFilter", filter);
             if(request.containsKey("category")) {
                 String category = request.get("category");

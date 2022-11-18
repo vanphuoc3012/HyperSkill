@@ -55,8 +55,4 @@ public class Recipe {
 
     @NotBlank
     private String category;
-
-    @ManyToOne
-    @JoinColumn(name = "user_email")
-    private User user;
 }

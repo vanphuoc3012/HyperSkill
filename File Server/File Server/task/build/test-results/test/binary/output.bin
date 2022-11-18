@@ -1,0 +1,7 @@
+[1;31m
+Start test 1[0m
+Server started!
+Client started!
+FEnter action (1 - get a file, 2 - create a file, 3 - delete a file):
+> exit
+The request was sent
